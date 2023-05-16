@@ -25,6 +25,7 @@
   </div>
   <div class="div_inline">
     <h3>剖视图</h3>
+    <h3>微结构示意图</h3>
   </div>
   <div class="div_inline">
     <h3>组件列表</h3>
@@ -34,5 +35,6 @@
 <style scoped>
 .div_inline {
   display: inline-block;
+  vertical-align: middle;
 }
 </style>
