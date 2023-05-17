@@ -22,6 +22,9 @@
   </div>
   <div class="div_inline">
     <h3>俯视图</h3>
+    <svg width="400" height="300">
+      <circle cx="100" cy="100" r="50"/>
+    </svg>
   </div>
   <div class="div_inline">
     <h3>剖视图</h3>
