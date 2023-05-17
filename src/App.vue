@@ -1,4 +1,5 @@
 <script setup lang="ts">
+  import points_cloud from './components/points_cloud.vue';
 </script>
 
 <template>
@@ -24,6 +25,7 @@
     <h3>俯视图</h3>
     <svg width="400" height="300">
       <circle cx="100" cy="100" r="50"/>
+      <points_cloud :circle_color="`red`" :circle_radius="5" :circle_pos="[[150,150]]"></points_cloud>
     </svg>
   </div>
   <div class="div_inline">
