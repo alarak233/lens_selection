@@ -1,5 +1,7 @@
 <script setup lang="ts">
+  import {ref} from "vue"
   import ring_array_cloud from './components/ring_array_cloud.vue';
+  const start_r=ref<number>(5);
 </script>
 
 <template>
@@ -23,9 +25,10 @@
   </div>
   <div class="div_inline">
     <h3>俯视图</h3>
-    <svg width="400" height="300">
-      <ring_array_cloud :start_r="50" :dist="20" :circle_color="`blue`"
-      :ring_num="5" :circle_num="[10,12,14,16,18]" :circle_r="10"></ring_array_cloud>
+    <svg width="600" height="400">
+      <ring_array_cloud :start_r="start_r" :dist="20" :circle_color="`blue`"
+        :ring_num="5" :circle_num="[10,12,14,16,18]" :circle_r="10">
+      </ring_array_cloud>
     </svg>
   </div>
   <div class="div_inline">
@@ -34,6 +37,7 @@
   </div>
   <div class="div_inline">
     <h3>组件列表</h3>
+    <input type="number" v-model="start_r"/>
   </div>
 </template>
 
