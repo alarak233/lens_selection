@@ -1,22 +1,22 @@
 <script setup lang="ts">
   import {ref,reactive} from "vue"
   import ring_array_cloud from './components/ring_array_cloud.vue';
-  import type { Circle_data,Com_data } from "./components/model";
+  import type { Ring_data,Com_data } from "./components/model";
 
-  const circle_data1:Circle_data=reactive({
-    start_r:5,
+  const circle_data1:Ring_data=reactive({
+    start_r:50,
     ring_num:5,
     dist:20,
     circle_r:10,
-    circle_num:[10,12,14,16,18],
-    circle_color:'blue'
+    circle_points_num:[10,12,14,16,18],
+    circle_color:'blue',
+    end_angle:360-72
   }); 
 
-  let com_data1:Com_data={
-    center_x:300,
-    center_y:200,
+  let com_data1:Com_data=reactive({
+    center:{x:300,y:200},
     start_angle:0
-  }
+  });
 </script>
 
 <template>
@@ -52,6 +52,10 @@
   <div class="div_inline">
     <h3>组件列表</h3>
     <input type="number" v-model="circle_data1.start_r"/>
+    <br>
+    <input type="number" v-model="circle_data1.end_angle"/>
+    <br>
+    <input type="number" v-model="com_data1.start_angle"/>
   </div>
 </template>
 
