@@ -1,7 +1,22 @@
 <script setup lang="ts">
-  import {ref} from "vue"
+  import {ref,reactive} from "vue"
   import ring_array_cloud from './components/ring_array_cloud.vue';
-  const start_r=ref<number>(5);
+  import type { Circle_data,Com_data } from "./components/model";
+
+  const circle_data1:Circle_data=reactive({
+    start_r:5,
+    ring_num:5,
+    dist:20,
+    circle_r:10,
+    circle_num:[10,12,14,16,18],
+    circle_color:'blue'
+  }); 
+
+  let com_data1:Com_data={
+    center_x:300,
+    center_y:200,
+    start_angle:0
+  }
 </script>
 
 <template>
@@ -26,8 +41,7 @@
   <div class="div_inline">
     <h3>俯视图</h3>
     <svg width="600" height="400">
-      <ring_array_cloud :start_r="start_r" :dist="20" :circle_color="`blue`"
-        :ring_num="5" :circle_num="[10,12,14,16,18]" :circle_r="10">
+      <ring_array_cloud :circle_data="circle_data1" :com_data="com_data1">
       </ring_array_cloud>
     </svg>
   </div>
@@ -37,7 +51,7 @@
   </div>
   <div class="div_inline">
     <h3>组件列表</h3>
-    <input type="number" v-model="start_r"/>
+    <input type="number" v-model="circle_data1.start_r"/>
   </div>
 </template>
 
