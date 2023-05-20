@@ -1,18 +1,17 @@
-<template>
+<template v-if="!microstructure_data.circle_microstr_data===undefined">
     <g>
-        <circle v-for="point_pos in circle_pos" :cx="point_pos[0]" :cy="point_pos[1]" 
-            :r="circle_r" :stroke="circle_color" fill="none"></circle>
+        <circle v-for="point_pos in points_pos" :cx="point_pos[0]" :cy="point_pos[1]" 
+        :r="microstructure_data.circle_microstr_data?.radius" :stroke="microstructure_data.color" fill="none"></circle>
     </g>
 </template>
 
 <script setup lang="ts">
-    const props=defineProps<{
-        circle_pos:number[][],
-        circle_r:number,
-        circle_color:string
-    }>();
+import type {Microstructure_data} from './model'
+
+const props = defineProps<{
+    points_pos: number[][],
+    microstructure_data:Microstructure_data
+}>();
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

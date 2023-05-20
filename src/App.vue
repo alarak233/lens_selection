@@ -1,22 +1,18 @@
 <script setup lang="ts">
-  import {ref,reactive} from "vue"
-  import ring_array_cloud from './components/ring_array_cloud.vue';
-  import type { Ring_data,Com_data } from "./components/model";
+  import {ref,reactive} from "vue";
+  import circle_array_cloud from "./components/circle_array_cloud.vue";
+  import type { Circle_data } from "./components/model";
 
-  const circle_data1:Ring_data=reactive({
+  const circle_data1:Circle_data=reactive({
     start_r:50,
-    ring_num:5,
     dist:20,
-    circle_r:10,
-    circle_points_num:[10,12,14,16,18],
-    circle_color:'blue',
-    end_angle:360-72
-  }); 
-
-  let com_data1:Com_data=reactive({
+    points_num:[10,12,14,16,18],
+    end_angle:360-72,
     center:{x:300,y:200},
-    start_angle:0
-  });
+    start_angle:0,
+    circle_microstr_data:{radius:5},
+    color:"green"
+  }); 
 </script>
 
 <template>
@@ -41,8 +37,7 @@
   <div class="div_inline">
     <h3>俯视图</h3>
     <svg width="600" height="400">
-      <ring_array_cloud :circle_data="circle_data1" :com_data="com_data1">
-      </ring_array_cloud>
+      <circle_array_cloud :circle_data="circle_data1"/>
     </svg>
   </div>
   <div class="div_inline">
@@ -55,7 +50,7 @@
     <br>
     <input type="number" v-model="circle_data1.end_angle"/>
     <br>
-    <input type="number" v-model="com_data1.start_angle"/>
+    <input type="number" v-model="circle_data1.start_angle"/>
   </div>
 </template>
 

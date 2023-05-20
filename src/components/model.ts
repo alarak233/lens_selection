@@ -1,25 +1,43 @@
-interface Ring_data {
-    start_r: number,
-    ring_num: number,
-    dist: number,
-    circle_r: number,
-    circle_points_num: number[],
-    circle_color: string,
-    end_angle: number
+// 微结构数据
+interface Circle_microstr_data {
+    radius: number
 }
 
-interface Com_data {
+interface Polygon_microstr_data {
+    edge_num: number,
+    edge_length: number,
+    angle: number
+}
+
+interface Microstructure_data {
+    circle_microstr_data?: Circle_microstr_data,
+    polygon_microstr_data?: Polygon_microstr_data,
+    color: string
+}
+
+// 微结构排布形状数据
+interface Pos {
+    x: number,
+    y: number
+}
+
+interface Com_data extends Microstructure_data {
     center: Pos
     start_angle: number,
 }
 
-interface Polygon_data {
-
+interface Circle_data extends Com_data {
+    start_r: number,
+    dist: number,
+    points_num: number[],
+    end_angle: number,
 }
 
-interface Pos {
-    x: number,
-    y: number
+interface Polygon_data extends Com_data{
+    start_len:number,
+    dist:number,
+    total_edge_num:number,
+    cur_edge_num:number,
 }
 
 interface Line_data {
@@ -28,4 +46,4 @@ interface Line_data {
     points_num: number
 }
 
-export type { Ring_data , Com_data };
+export type { Microstructure_data, Circle_data,Polygon_data };
