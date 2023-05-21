@@ -1,18 +1,28 @@
 <script setup lang="ts">
-  import {ref,reactive} from "vue";
-  import circle_array_cloud from "./components/circle_array_cloud.vue";
-  import type { Circle_data } from "./components/model";
+import { ref, reactive } from "vue";
+import circle_array_cloud from "./components/circle_array_cloud.vue";
+import line_array_cloud from "./components/line_array_cloud.vue";
+import type { Circle_data, Line_data } from "./components/model";
 
-  const circle_data1:Circle_data=reactive({
-    start_r:50,
-    dist:20,
-    points_num:[10,12,14,16,18],
-    end_angle:360-72,
-    center:{x:300,y:200},
-    start_angle:0,
-    circle_microstr_data:{radius:5},
-    color:"green"
-  }); 
+const circle_data1: Circle_data = reactive({
+  start_r: 50,
+  dist: 20,
+  points_num: [10, 12, 14, 16, 18],
+  end_angle: 360 - 72,
+  center: { x: 300, y: 200 },
+  start_angle: 0,
+  circle_microstr_data: { radius: 5 },
+  color: "green"
+});
+
+const line_data1: Line_data = reactive({
+  start_pos:{x:100,y:100},
+  points_num:10,
+  start_angle:20,
+  dist:30,
+  circle_microstr_data:{radius:10},
+  color:"blue"
+});
 </script>
 
 <template>
@@ -37,7 +47,8 @@
   <div class="div_inline">
     <h3>俯视图</h3>
     <svg width="600" height="400">
-      <circle_array_cloud :circle_data="circle_data1"/>
+      <circle_array_cloud :circle_data="circle_data1" />
+      <line_array_cloud :line_data="line_data1"/>
     </svg>
   </div>
   <div class="div_inline">
@@ -46,11 +57,13 @@
   </div>
   <div class="div_inline">
     <h3>组件列表</h3>
-    <input type="number" v-model="circle_data1.start_r"/>
+    <input type="number" v-model="circle_data1.start_r" />
     <br>
-    <input type="number" v-model="circle_data1.end_angle"/>
+    <input type="number" v-model="circle_data1.end_angle" />
     <br>
-    <input type="number" v-model="circle_data1.start_angle"/>
+    <input type="number" v-model="circle_data1.start_angle" />
+    <br>
+    <input type="number" v-model="line_data1.start_angle" />
   </div>
 </template>
 

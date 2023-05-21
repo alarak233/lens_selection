@@ -22,28 +22,26 @@ interface Pos {
 }
 
 interface Com_data extends Microstructure_data {
-    center: Pos
-    start_angle: number,
+    center?: Pos
+    start_angle?: number,
+    dist:number
 }
 
 interface Circle_data extends Com_data {
     start_r: number,
-    dist: number,
     points_num: number[],
     end_angle: number,
 }
 
 interface Polygon_data extends Com_data{
     start_len:number,
-    dist:number,
     total_edge_num:number,
     cur_edge_num:number,
 }
 
-interface Line_data {
+interface Line_data extends Com_data{
     start_pos: Pos,
-    end_pos: Pos,
     points_num: number
 }
 
-export type { Microstructure_data, Circle_data,Polygon_data };
+export type { Microstructure_data, Circle_data,Polygon_data,Line_data };

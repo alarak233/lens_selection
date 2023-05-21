@@ -1,4 +1,4 @@
-<template v-if="!microstructure_data.circle_microstr_data===undefined">
+<template v-if="microstructure_data.circle_microstr_data">
     <g>
         <circle v-for="point_pos in points_pos" :cx="point_pos[0]" :cy="point_pos[1]" 
         :r="microstructure_data.circle_microstr_data?.radius" :stroke="microstructure_data.color" fill="none"></circle>

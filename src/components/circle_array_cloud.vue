@@ -22,9 +22,17 @@ const circle_points_pos = computed<number[][]>(() => {
             / props.circle_data.points_num[i];
         for (let j = 0; j < props.circle_data.points_num[i]; j++) {
             const cur_r = props.circle_data.start_r + props.circle_data.dist * i;
-            const cur_theta=theta*j+props.circle_data.start_angle/180*Math.PI;
-            pts.push([cur_r * Math.cos(cur_theta) + props.circle_data.center.x,
-            cur_r * Math.sin(cur_theta) + props.circle_data.center.y]);
+            let cur_theta=theta*j;
+            if(props.circle_data.start_angle){
+                cur_theta+=props.circle_data.start_angle/180*Math.PI;
+            }
+            let cur_x=cur_r * Math.cos(cur_theta);
+            let cur_y=cur_r * Math.sin(cur_theta);
+            if(props.circle_data.center){
+                cur_x+=props.circle_data.center.x;
+                cur_y+=props.circle_data.center.y;
+            }
+            pts.push([cur_x,cur_y]);
         }
     }
 

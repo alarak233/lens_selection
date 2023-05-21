@@ -6,7 +6,7 @@ import {computed} from 'vue'
 import type { Polygon_data } from './model';
 import points_cloud from './points_cloud.vue';
 
-const pros = defineProps<{
+const props = defineProps<{
     polygon_data: Polygon_data
 }>();
 
