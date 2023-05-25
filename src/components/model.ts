@@ -36,7 +36,8 @@ interface Circle_data extends Com_data {
 interface Polygon_data extends Com_data{
     start_len:number,
     total_edge_num:number,
-    cur_edge_num:number,
+    edge_num:number,
+    points_num:number[],
 }
 
 interface Line_data extends Com_data{

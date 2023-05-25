@@ -2,7 +2,8 @@
 import { ref, reactive } from "vue";
 import circle_array_cloud from "./components/circle_array_cloud.vue";
 import line_array_cloud from "./components/line_array_cloud.vue";
-import type { Circle_data, Line_data } from "./components/model";
+import polygon_array_cloud from "./components/polygon_array_cloud.vue";
+import type { Circle_data, Line_data, Polygon_data } from "./components/model";
 
 const circle_data1: Circle_data = reactive({
   start_r: 50,
@@ -16,13 +17,25 @@ const circle_data1: Circle_data = reactive({
 });
 
 const line_data1: Line_data = reactive({
-  start_pos:{x:100,y:100},
-  points_num:10,
-  start_angle:20,
-  dist:30,
-  circle_microstr_data:{radius:10},
-  color:"blue"
+  start_pos: { x: 100, y: 100 },
+  points_num: 10,
+  start_angle: 20,
+  dist: 30,
+  circle_microstr_data: { radius: 10 },
+  color: "blue"
 });
+
+const polygon_data1: Polygon_data = reactive({
+  start_len: 70,
+  total_edge_num: 7,
+  edge_num: 6,
+  points_num: [4, 5, 6, 7],
+  dist: 15,
+  start_angle: 20,
+  color: "red",
+  center: { x: 250, y: 250 },
+  circle_microstr_data: { radius: 6 }
+})
 </script>
 
 <template>
@@ -48,7 +61,8 @@ const line_data1: Line_data = reactive({
     <h3>俯视图</h3>
     <svg width="600" height="400">
       <circle_array_cloud :circle_data="circle_data1" />
-      <line_array_cloud :line_data="line_data1"/>
+      <line_array_cloud :line_data="line_data1" />
+      <polygon_array_cloud :polygon_data="polygon_data1" />
     </svg>
   </div>
   <div class="div_inline">
@@ -64,6 +78,14 @@ const line_data1: Line_data = reactive({
     <input type="number" v-model="circle_data1.start_angle" />
     <br>
     <input type="number" v-model="line_data1.start_angle" />
+    <br>
+    <input type="number" v-model="polygon_data1.start_angle" />
+    <br>
+    <input type="number" v-model="polygon_data1.edge_num" />
+    <br>
+    <input type="number" v-model="polygon_data1.total_edge_num" />
+    <br>
+    <input type="number" v-model="polygon_data1.dist" />
   </div>
 </template>
 
