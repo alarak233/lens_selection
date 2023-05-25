@@ -42,6 +42,7 @@ const polygon_data1: Polygon_data = reactive({
   <div>
     <h2>多点离焦镜片选型</h2>
     <p>联系方式:alarak2333@outlook.com</p>
+    <p>源码地址 <a href="https://github.com/alarak233/lens_selection">点击进入</a></p>
   </div>
   <div class="div_inline">
     <div>
