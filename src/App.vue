@@ -3,7 +3,8 @@ import { ref, reactive } from "vue";
 import circle_array_cloud from "./components/circle_array_cloud.vue";
 import line_array_cloud from "./components/line_array_cloud.vue";
 import polygon_array_cloud from "./components/polygon_array_cloud.vue";
-import type { Circle_data, Line_data, Polygon_data } from "./components/model";
+import water_marks from "./components/water_marks.vue";
+import type { Circle_data, Line_data, Polygon_data, Water_marks_data } from "./components/model";
 
 const circle_data1: Circle_data = reactive({
   start_r: 50,
@@ -36,6 +37,22 @@ const polygon_data1: Polygon_data = reactive({
   center: { x: 250, y: 250 },
   circle_microstr_data: { radius: 6 }
 })
+const water_marks_data1: Water_marks_data = {
+  text: "江苏工大金凯高端装备制造有限公司",
+  opacity: 0.1,
+  color: "black",
+  size: 25,
+  start_pos: {x:-400,y:20},
+  end_pos:{x:300,y:200}
+};
+const water_marks_data2: Water_marks_data = {
+  text: "江苏工大金凯高端装备制造有限公司",
+  opacity: 0.1,
+  color: "black",
+  size: 25,
+  start_pos: {x:300,y:20},
+  end_pos:{x:1000,y:200}
+};
 </script>
 
 <template>
@@ -64,6 +81,8 @@ const polygon_data1: Polygon_data = reactive({
       <circle_array_cloud :circle_data="circle_data1" />
       <line_array_cloud :line_data="line_data1" />
       <polygon_array_cloud :polygon_data="polygon_data1" />
+      <water_marks :water_marks_data=water_marks_data1></water_marks>
+      <water_marks :water_marks_data=water_marks_data2></water_marks>
     </svg>
   </div>
   <div class="div_inline">

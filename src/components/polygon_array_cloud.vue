@@ -51,7 +51,7 @@ const line_data_list=computed<Line_data[]>(()=>{
     return line_s;
 });
 
-console.log(line_data_list);
+//console.log(line_data_list);
 </script>
 
 <style scoped></style>

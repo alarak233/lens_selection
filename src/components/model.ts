@@ -45,4 +45,14 @@ interface Line_data extends Com_data{
     points_num: number
 }
 
-export type { Microstructure_data, Circle_data,Polygon_data,Line_data };
+//水印数据
+interface Water_marks_data{
+    text:string,
+    opacity:number,
+    color:string,
+    size:number,
+    start_pos:Pos,
+    end_pos:Pos
+}
+
+export type { Microstructure_data, Circle_data,Polygon_data,Line_data,Water_marks_data };
