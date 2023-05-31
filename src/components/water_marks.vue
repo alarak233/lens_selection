@@ -8,7 +8,7 @@
             :from="props.water_marks_data.start_pos.x"
             :to="props.water_marks_data.end_pos.x"
             begin="0s"
-            dur="5s"
+            dur="10s"
             fill="freeze"
             repeatCount="indefinite"
         />

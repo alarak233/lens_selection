@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, reactive } from "vue";
 import circle_array_cloud from "./components/circle_array_cloud.vue";
+import circle_array_control from "./components/circle_array_control.vue";
 import line_array_cloud from "./components/line_array_cloud.vue";
 import polygon_array_cloud from "./components/polygon_array_cloud.vue";
 import water_marks from "./components/water_marks.vue";
@@ -91,12 +92,7 @@ const water_marks_data2: Water_marks_data = {
   </div>
   <div class="div_inline">
     <h3>组件列表</h3>
-    <input type="number" v-model="circle_data1.start_r" />
-    <br>
-    <input type="number" v-model="circle_data1.end_angle" />
-    <br>
-    <input type="number" v-model="circle_data1.start_angle" />
-    <br>
+    <circle_array_control :circle_data="circle_data1" :id="1"/>
     <input type="number" v-model="line_data1.start_angle" />
     <br>
     <input type="number" v-model="polygon_data1.start_angle" />
