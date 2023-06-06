@@ -78,7 +78,7 @@ const water_marks_data2: Water_marks_data = {
   </div>
   <div class="div_inline">
     <h3>俯视图</h3>
-    <svg width="600" height="400">
+    <svg width="1100" height="900">
       <circle_array_cloud :circle_data="circle_data1" />
       <line_array_cloud :line_data="line_data1" />
       <polygon_array_cloud :polygon_data="polygon_data1" />
