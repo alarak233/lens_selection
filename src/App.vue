@@ -94,7 +94,7 @@ const water_marks_data2: Water_marks_data = {
       <h3>剖视图</h3>
       <h3>微结构示意图</h3>
     </div>
-    <div class="div_inline">
+    <div class="div_inline" style="height: 400px;overflow-y: auto;">
       <h3>组件列表</h3>
       <circle_array_control :circle_data="circle_data1" :id="1" />
       <input type="number" v-model="line_data1.start_angle" />
